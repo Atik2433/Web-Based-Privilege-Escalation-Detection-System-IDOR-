@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; background:#f4f4f4; }
+.container { width: 80%; margin: auto; }
+.card { background:white; padding:20px; margin:20px; border-radius:10px; }
+img { border-radius:50%; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Welcome, {{ user.name }}</h2>
+
+<p>
+Mode: {{ "🛡️ Prevention ON" if mode else "👁️ Detection Only" }}
+</p>
+
+<p>
+System: {{ "⚠️ Vulnerable Mode ON" if vuln else "🔒 Secure Mode" }}
+</p>
+
+<a href="/toggle">Toggle Prevention</a> |
+<a href="/vuln">Toggle Vulnerable Mode</a>
+
+<div class="card">
+<img src="{{ user.image }}" width="80"><br><br>
+<b>Email:</b> {{ user.email }}<br>
+<b>User ID:</b> {{ uid }}
+</div>
+
+<div class="card">
+<h3>📄 Your Articles</h3>
+<p>Understanding Web Security</p>
+<p>Top 10 Cyber Attacks</p>
+<p>How Hackers Exploit IDOR</p>
+</div>
+
+
+
+</body>
+</html>

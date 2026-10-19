@@ -1,0 +1,16 @@
+<h1>🛡️ Privilege Escalation Detection System</h1>
+
+<p>Mode: {{ "🛡️ Prevention ON" if mode else "👁️ Detection Only" }}</p>
+<a href="/toggle">Toggle Mode</a>
+
+<h3>Test Links:</h3>
+<a href="/dashboard/user?id=1233">User Dashboard</a><br>
+<a href="/dashboard/admin?id=6755">Admin Dashboard</a><br>
+<a href="/dashboard/admin?id=6755&role=admin">Role Tampering</a><br>
+
+<h3>🚨 Alerts</h3>
+{% for alert in alerts %}
+<p style="color:red;">{{ alert }}</p>
+{% endfor %}
+
+<a href="/logout">Logout</a>

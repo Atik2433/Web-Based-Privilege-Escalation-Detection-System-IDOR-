@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; background:#111; color:white; }
+.container { width: 80%; margin:auto; }
+
+.panel {
+    background:#222;
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>👑 Admin Dashboard</h2>
+
+<div class="panel">
+<h3>Admin Info</h3>
+<p>Name: {{ user.name }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Role: {{ user.role }}</p>
+</div>
+
+<div class="panel">
+<h3>👥 User Management</h3>
+
+{% for u in users %}
+<p>
+ID: {{ u.id }} | Name: {{ u.name }} | Role: {{ u.role }}
+
+<a href="/delete_user/{{ u.id }}">❌ Delete</a> |
+<a href="/change_role/{{ u.id }}">🔄 Toggle Role</a>
+</p>
+{% endfor %}
+
+</div>
+
+<a href="/logout">Logout</a>
+
+</div>
+
+</body>
+</html>
